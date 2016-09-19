@@ -17,15 +17,17 @@ import java.util.Scanner;
 
 class Q5_NoHate
 {
+	//Declaring constant value
 	public static final String hate = "hate";
 	
 	public static void main(String[] args)
 	{
+		//Declaring scanner object
 		Scanner userInput = new Scanner(System.in);
-		String sentence;
 		
+		//Entering and storing data
 		System.out.println("Enter a sentence with the word hate in it: ");
-		sentence = userInput.nextLine();
+		String sentence = userInput.nextLine();
 
 		int position = sentence.indexOf("hate");
 		
@@ -36,7 +38,7 @@ class Q5_NoHate
 		System.out.println("The word \"hate\" starts at index " + position);
 		
 		//Takes 'i' from sentence.
-		//concatenates the string adore.
+		//Concatenates the string adore.
 		//Concatenates the value of the variable ending.
 		sentence = sentence.substring(0, position) + "love" + ending;
 		System.out.println("The changed string is:");
