@@ -16,22 +16,26 @@ is discarded.
 
 class Q6_BicyclistsSpeed
 {
-	public static final double pi = 3.14;
-	public static final double foot = 1;
-	public static final double inches = 12;
-	public static final double feet = 5280;
-	public static final double mile = 1;
-	public static final double minutes = 60;
-	public static final double hour = 1;
+	//Decalring constant variables
+	public static final double pi = 3.14, 
+					foot = 1,
+					inches = 12,
+					feet = 5280,
+					mile = 1,
+					minutes = 60,
+					hour = 1;
 	
 	public static void main(String[] args)
 	{
-		double gearSize = 100;
-		double cadence = 90;
-		double speed;
+		//Declaring variables
+		double gearSize = 100,
+			cadence = 90,
+			speed;
 		
+		//Inserting values into formula
 		speed = gearSize * pi * (foot/inches) * (mile/feet) * cadence * (minutes/hour);
 		
+		//Printing the resutls
 		System.out.println("The speed is: " + speed + "mph");
 	}
 }
