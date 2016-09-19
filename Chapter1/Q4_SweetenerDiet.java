@@ -24,14 +24,29 @@ from your program.)
 class Q4_SweetenerDiet
 {
 	//Weights are defined in kilograms(KG)
-	public static final double MOUSE_WEIGHT = 1.0;
-	public static final double MOUSE_SWEETENER_DEATH_AMOUNT = 0.1;
-	public static final double DIETER_WEIGHT = 60;
-	public static final double DIETER_DESIRED_WEIGHT = 55;
-	public static final double SODA_SWEETENER = 0.001;
+	private static final double AMOUNT_OF_ARTIFICIAL_SWEETENER_TO_KILL_MOUSE_IN_LITRE = 0.001,
+					WEIGHT_OF_MOUSE_IN_GRAMS = 25,
+					DESIRED_WEIGHT_OF_DIETER_IN_GRAMS = 65000,
+					CONCENTRATION_OF_ARTIFICIAL_SWEETENER_IN_DIET_SODA = 0.001;
 	
 	public static void main(String[] args)
 	{
-		
+		System.out.println(sodaLD50(DIETER_TARGET_KG) + " litres.");
+    	}
+    	
+	// Median lethal dose of artificial sweetener, in litres per kilogram of the subject's body weight.
+	public static double sweetenerLD50() {
+	    return MOUSE_SWEETENER_LD50_L / MOUSE_KG;
+	}
+	
+	// Median lethal dose of diet soda, in litres per kilogram of the subject's body weight.
+	public static double sodaLD50() {
+	    return sweetenerLD50() / SWEETENER_CONCENTRATION_IN_SODA;
+	}
+	
+	// Median lethal dose of diet soda, in litres.
+	// @param subjectKG subject's body weight, in kilograms
+	public static double sodaLD50(double subjectKG) {
+	    return subjectKG * sodaLD50();
 	}
 }
