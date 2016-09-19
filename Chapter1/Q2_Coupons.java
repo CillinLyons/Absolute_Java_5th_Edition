@@ -1,6 +1,11 @@
+/*
+The video game machines at your local arcade output coupons according to how
+well you play the game. You can redeem 10 coupons for a candy bar or 3 coupons
+for a gumball. You prefer candy bars to gumballs. Write a program that defines a
+*/
 import java.util.Scanner;
 
-class Coupons
+class Q3_Coupons
 {
 	public static final int CANDY_BAR = 10;
 	public static final int GUM_BALL = 3;
