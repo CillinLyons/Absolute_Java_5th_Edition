@@ -16,17 +16,17 @@ for a 150-pound person who runs 6 MPH for 30 minutes, plays basketball for
 
 class Q1_Exercise
 {
-		//Initializing constant variables
-		public static final int RUNNING_MET = 10;
-		public static final int BASKETBALL_MET = 8;
-		public static final int SLEEP_MET = 1;
+		//Declaring constant variables
+		public static final int RUNNING_MET = 10,
+					BASKETBALL_MET = 8,
+					SLEEP_MET = 1;
 		
-		public static final int RUNNING_MINUTES = 30;
-		public static final int BASKETBALL_MINUTES = 30;
-		public static final int SLEEP_MINUTES = 360;
+		public static final int RUNNING_MINUTES = 30,
+					BASKETBALL_MINUTES = 30,
+					SLEEP_MINUTES = 360;
 		
-		public static final double NUMBER = 0.0175;
-		public static final double WEIGHT = 150/2.2;
+		public static final double NUMBER = 0.0175,
+					   WEIGHT = 150/2.2;
 	
 	public static void main(String[] args)
 	{	
@@ -52,7 +52,7 @@ class Q1_Exercise
 		
 	}
 	
-	//Method to calculate total number of calories burned
+	//Method to calculate total number of calories burned for each exercise
 	private static double calculateMet(double number, int met, double weight, int time)
 	{
 		return number * met * weight * time;
