@@ -15,21 +15,23 @@ class Q3_PigLatin
 {
 	public static void main(String[] args)
 	{
+		//Declaring scanner object
 		Scanner userInput = new Scanner(System.in);
 		
-		String firstName;
-		String lastName;
-		char firstNameLetter;
-		char lastNameLetter;
-		String firstSubString;
-		String lastSubString;
-		String pigLatinFirstName;
-		String pigLatinLastName;
+		//Declaring variables
+		String firstName,
+			lastName;
+		char firstNameLetter,
+			lastNameLetter;
+		String firstSubString,
+			lastSubString;
+		String pigLatinFirstName,
+			pigLatinLastName;
+		String capitalPigFirstName,
+			capitalPigLastName;
 		String pigLatinFullName;
-		String capitalPigFirstName;
-		String capitalPigLastName;
 		
-		//Take in name
+		//Enter and store name
 		System.out.println("Enter your first name: ");
 		firstName = userInput.next();
 		System.out.println("Enter your last name: ");
@@ -54,6 +56,7 @@ class Q3_PigLatin
 		//Concatenate 2 names
 		pigLatinFullName = capitalPigFirstName + " " + capitalPigLastName;
 		
+		//Print the result
 		System.out.println("Your pig latin name is: " + pigLatinFullName);
 	}
 }
