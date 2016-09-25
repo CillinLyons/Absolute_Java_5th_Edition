@@ -35,18 +35,21 @@ class Q4_SweetenerDiet
     	}
     	
 	// Median lethal dose of artificial sweetener, in litres per kilogram of the subject's body weight.
-	public static double sweetenerLD50() {
+	public static double sweetenerLD50() 
+	{
 	    return MOUSE_SWEETENER_LD50_L / MOUSE_KG;
 	}
 	
 	// Median lethal dose of diet soda, in litres per kilogram of the subject's body weight.
-	public static double sodaLD50() {
+	public static double sodaLD50() 
+	{
 	    return sweetenerLD50() / SWEETENER_CONCENTRATION_IN_SODA;
 	}
 	
 	// Median lethal dose of diet soda, in litres.
 	// @param subjectKG subject's body weight, in kilograms
-	public static double sodaLD50(double subjectKG) {
+	public static double sodaLD50(double subjectKG) 
+	{
 	    return subjectKG * sodaLD50();
 	}
 }
