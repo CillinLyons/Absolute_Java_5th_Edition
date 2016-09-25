@@ -20,36 +20,32 @@ You may want to express the percent as the double value 0.001. (If your program
 turns out not to use a defined constant, you may remove that defined constant
 from your program.)
 */
-
 class Q4_SweetenerDiet
 {
-	//Weights are defined in kilograms(KG)
+	//Declaring the constant double values
 	private static final double AMOUNT_OF_ARTIFICIAL_SWEETENER_TO_KILL_MOUSE_IN_LITRE = 0.001,
 					WEIGHT_OF_MOUSE_IN_GRAMS = 25,
 					DESIRED_WEIGHT_OF_DIETER_IN_GRAMS = 65000,
 					CONCENTRATION_OF_ARTIFICIAL_SWEETENER_IN_DIET_SODA = 0.001;
-	
-	public static void main(String[] args)
-	{
-		System.out.println(sodaLD50(DIETER_TARGET_KG) + " litres.");
-    	}
-    	
-	// Median lethal dose of artificial sweetener, in litres per kilogram of the subject's body weight.
-	public static double sweetenerLD50() 
-	{
-	    return MOUSE_SWEETENER_LD50_L / MOUSE_KG;
-	}
-	
-	// Median lethal dose of diet soda, in litres per kilogram of the subject's body weight.
-	public static double sodaLD50() 
-	{
-	    return sweetenerLD50() / SWEETENER_CONCENTRATION_IN_SODA;
-	}
-	
-	// Median lethal dose of diet soda, in litres.
-	// @param subjectKG subject's body weight, in kilograms
-	public static double sodaLD50(double subjectKG) 
-	{
-	    return subjectKG * sodaLD50();
-	}
+
+    public static void main(String[] args) 
+    {
+	//Calling the maxAmountOfDietSodaDieterCanDrinkInLitre method and printing the results
+        System.out.println(maxAmountOfDietSodaDieterCanDrinkInLitre()
+                + " litres.");// 2600.00 litres
+    }
+
+    //Calculating the amount of soda a mouse can drink
+    public static double maxAmountOfDietSodaAMouseCanDrinkInLitre() 
+    {
+        return AMOUNT_OF_ARTIFICIAL_SWEETENER_TO_KILL_MOUSE_IN_LITRE
+                / CONCENTRATION_OF_ARTIFICIAL_SWEETENER_IN_DIET_SODA;
+    }
+
+    //Calculating the amount of soda the dieter can drink
+    public static double maxAmountOfDietSodaDieterCanDrinkInLitre() 
+    {
+        return (maxAmountOfDietSodaAMouseCanDrinkInLitre() * DESIRED_WEIGHT_OF_DIETER_IN_GRAMS)
+                / WEIGHT_OF_MOUSE_IN_GRAMS;
+    }
 }
